@@ -23,6 +23,7 @@ npm run build --report
 ```
 npm install vue-awesome-swiper@2.6.7 --save
 ```  
+[项目中分页组件](https://github.com/szjzszjz/travel/blob/index-swiper/src/pages/home/components/Swiper.vue)
 ## 包安装   
 ### fastClick 
 * 目的：解决项目中click事件有时候在某些机型上会出现300ms延迟的情况  
