@@ -17,6 +17,12 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+## plugins  
+[Vue 分页插件](https://github.com/surmon-china/vue-awesome-swiper)  
+安装(指定稳定版本2.6.7)  
+```
+npm install vue-awesome-swiper@2.6.7 --save
+```  
 ## 包安装   
 ### fastClick 
 * 目的：解决项目中click事件有时候在某些机型上会出现300ms延迟的情况  
