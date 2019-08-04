@@ -17,6 +17,12 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+## git 分支开发
+1、git上建立分支  
+2、找到项目当前文件夹，打开命令行窗口  
+3、执行命令：`git pull` 将分支拉取下来  
+4、执行命令：`git checkout index-icons` 切换到新的分支上进行开发  
+  
 ## plugins  
 [Vue 分页插件](https://github.com/surmon-china/vue-awesome-swiper)  
 安装(指定稳定版本2.6.7)  
