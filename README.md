@@ -21,7 +21,7 @@ npm run build --report
 1、git上建立分支  
 2、找到项目当前文件夹，打开命令行窗口  
 3、将分支拉取下来：`git pull`  
-4、切换到新的分支上进行开发：`git checkout index-icons`   
+4、切换到分支上进行开发：`git checkout index-icons`   
 
 5、开发完毕在当前项目文件夹下，执行命令：`git add .`  
 6、提交：`git commit -m '提交日志'`  
