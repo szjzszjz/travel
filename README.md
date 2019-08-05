@@ -42,7 +42,7 @@ npm install vue-awesome-swiper@2.6.7 --save
 ```  
 [项目中分页组件](https://github.com/szjzszjz/travel/blob/index-swiper/src/pages/home/components/Swiper.vue)
 ## 包安装   
-### fastClick 
+### 1、fastClick 
 * 目的：解决项目中click事件有时候在某些机型上会出现300ms延迟的情况  
 ```
 安装fastclick依赖
@@ -58,12 +58,19 @@ import fastClick from 'fastclick'
 使用  
 fastClick.attach(document.body)  
 ```  
-### stylus  
+### 2、stylus  
 * 目的：CSS 预处理，顾名思义，预先处理 CSS。那 stylus 咋预先处理呢？stylus 给 CSS 添加了可编程的特性，也就是说，在 stylus 中可以使用变量、函数、判断、循环一系列 CSS 没有的东西来编写样式文件，执行这一套骚操作之后，这个文件可编译成 CSS 文件。  
 ```
 npm install stylus --save   
 npm install stylus-loader --save   
 npm run start  
+```  
+
+### 3、axios  
+* 目的：处理ajax请求  
+```text
+npm install axios --save
+npm run start
 ```  
 
 ## 知识点  
@@ -98,5 +105,18 @@ $bgColor = #00bcd4  //全局背景颜色
 ```
 @import "~styles/varibles.styl"
 background: $bgColor;
+```  
+### 3、请求转发  
+找到配置文件：config/index.js  
+配置如下内容  
+```javascript
+    proxyTable: {
+      '/api':{
+        target: 'http://localhost:8080',
+        pathRewrite: {
+          '^/api':'/static/mock'
+        }
+      }
+    }
 ```
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

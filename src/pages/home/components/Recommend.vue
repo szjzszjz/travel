@@ -3,7 +3,7 @@
     <div class="title">热销推荐</div>
     <ul>
       <!--      border-bottom 底部1px边框-->
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of recommends" :key="item.id">
         <img class="item-img"
              :src="item.imgUrl" alt="">
         <div class="item-info">
@@ -19,25 +19,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        title: '长隆野生动物世界',
-        desc: '广州长隆野生动物世界成人票(特定日)【当天可定，随买随用】广州长隆野生动物世界成人票(特定日)【当天可定，随买随用】',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg'
-      }, {
-        id: '0002',
-        title: '长隆野生动物世界',
-        desc: '广州长隆野生动物世界成人票(特定日)【当天可定，随买随用】广州长隆野生动物世界成人票(特定日)【当天可定，随买随用】',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg'
-      }, {
-        id: '0003',
-        title: '长隆野生动物世界',
-        desc: '广州长隆野生动物世界成人票(特定日)【当天可定，随买随用】广州长隆野生动物世界成人票(特定日)【当天可定，随买随用】',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg'
-      }]
-    }
+  props: {
+    recommends: Array
   }
 
 }
