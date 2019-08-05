@@ -22,6 +22,9 @@ npm run build --report
 2、找到项目当前文件夹，打开命令行窗口  
 3、执行命令：`git pull` 将分支拉取下来  
 4、执行命令：`git checkout index-icons` 切换到新的分支上进行开发  
+
+## 拉取某个分支的代码内容  
+在利用命令行或者git bash执行命令 `git clone -b index-icons https://github.com/szjzszjz/travel.git`
   
 ## plugins  
 [Vue 分页插件](https://github.com/surmon-china/vue-awesome-swiper)  
