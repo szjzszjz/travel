@@ -20,8 +20,16 @@ npm run build --report
 ## git 分支开发
 1、git上建立分支  
 2、找到项目当前文件夹，打开命令行窗口  
-3、执行命令：`git pull` 将分支拉取下来  
-4、执行命令：`git checkout index-icons` 切换到新的分支上进行开发  
+3、将分支拉取下来：`git pull`  
+4、切换到新的分支上进行开发：`git checkout index-icons`   
+
+5、开发完毕在当前项目文件夹下，执行命令：`git add .`  
+6、提交：`git commit -m '提交日志'`  
+7、推送到分支远程仓库：`git push`  
+8、回到主分支：`git checkout master`  
+9、将主分支代码合并到主干上：`git merge origin/index-icons`
+10、推送至远程仓库：`git push`  
+
 
 ## 拉取某个分支的代码内容  
 在利用命令行或者git bash执行命令 `git clone -b index-icons https://github.com/szjzszjz/travel.git`
