@@ -23,6 +23,7 @@ export default {
     background $bgColor
     text-align: center
     color: $darkTextColor
+    font-size 1.2rem
   }
 
   .header-back {

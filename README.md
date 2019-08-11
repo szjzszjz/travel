@@ -35,11 +35,16 @@ npm run build --report
 在利用命令行或者git bash执行命令 `git clone -b index-icons https://github.com/szjzszjz/travel.git`
   
 ## plugins  
-[Vue 分页插件](https://github.com/surmon-china/vue-awesome-swiper)  
+1、[vue-awesome-swiper（Vue轮播图插件）](https://github.com/surmon-china/vue-awesome-swiper)  
 安装(指定稳定版本2.6.7)  
 ```
 npm install vue-awesome-swiper@2.6.7 --save
 ```  
+2、[better-scroll(Vue滚动页插件)](https://github.com/ustbhuangyi/better-scroll)  
+安装  
+```text
+npm install better-scroll --save
+```
 [项目中分页组件](https://github.com/szjzszjz/travel/blob/index-swiper/src/pages/home/components/Swiper.vue)
 ## 包安装   
 ### 1、fastClick 
