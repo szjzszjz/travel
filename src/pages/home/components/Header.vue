@@ -7,10 +7,12 @@
       <span class="iconfont arrow-icon">&#xeb9c;</span>
       输入城市游玩主题
     </div>
-    <div class="header-right">
-      {{city}}
-      <span class="iconfont">&#xe6aa;</span>
-    </div>
+    <router-link to='/city'>
+      <div class="header-right">
+        {{this.city}}
+        <span class="iconfont">&#xe6aa;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -30,17 +32,17 @@ export default {
 
   .header {
     display: flex;
-    line-height: 3.04rem;
+    height: $headerHeight
+    line-height: $headerHeight
     background: $bgColor;
     color: #ffffff;
 
     .header-left { // 返回
-      margin-left: 0.4rem;
-      width: 2rem;
+      margin-left: 0;
+      width: $headerHeight;
+      height: $headerHeight
+      text-align: center
       float: left;
-      .back-icon{
-
-      }
     }
 
     .header-input {
@@ -63,6 +65,9 @@ export default {
         margin-left: -2rem;
         font-size 0.24rem;
       }
+    }
+    a{
+      color: #ffffff
     }
   }
 </style>

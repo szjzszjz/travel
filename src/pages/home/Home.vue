@@ -1,5 +1,6 @@
 <template>
   <div>
+<!--    首页导航条-->
     <home-header :city="city"></home-header>
 <!--    引入分页组件-->
     <home-Swiper :list="swiperList"></home-Swiper>
@@ -7,6 +8,7 @@
     <home-icons :icons="iconList"></home-icons>
 <!--    首页推荐组件-->
     <home-recommend :recommends="recommendList"></home-recommend>
+<!--    周末旅游列表-->
     <home-weekend :weekends="weekendList"></home-weekend>
   </div>
 </template>
