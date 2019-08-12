@@ -1,7 +1,7 @@
 <template>
   <div>
 <!--    首页导航条-->
-    <home-header :city="city"></home-header>
+    <home-header></home-header>
 <!--    引入分页组件-->
     <home-Swiper :list="swiperList"></home-Swiper>
 <!--    首页图标排列组件-->

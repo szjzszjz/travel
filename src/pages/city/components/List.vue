@@ -4,13 +4,13 @@
       <div class="area">
         <div class="title border-bottom">当前城市</div>
         <div class="button-list-area">
-          <div class="button">北京</div>
+          <div class="button">{{this.$store.state.city}}</div>
         </div>
       </div>
       <div class="area">
         <div class="title border-bottom">热点城市</div>
         <div class="button-list-area">
-          <div class="button" v-for="city of hot" :key="city.id">{{city.name}}</div>
+          <div class="button" v-for="city of hot" :key="city.id" @click="handleChangeCity(city.name)">{{city.name}}</div>
         </div>
       </div>
 
@@ -22,7 +22,7 @@
       >
         <div class="title border-bottom" >{{key}}</div>
         <div class="item-list-area" v-for="city of items" :key="city.id">
-          <div class="item border-bottom" >{{city.name}}</div>
+          <div class="item border-bottom" @click="handleChangeCity(city.name)">{{city.name}}</div>
         </div>
       </div>
 
@@ -39,6 +39,13 @@ export default {
     hot: Array,
     cities: Object,
     letter: String
+  },
+  methods: {
+    handleChangeCity (city) {
+      // this.$store.dispatch('changeCity', city) // 调用action 然后再调用mutation
+      this.$store.commit('changeCity', city) // 直接调用mutation
+      this.$router.push('/')
+    }
   },
   mounted () {
     this.scroll = new BetterScroll(this.$refs.wrapper)

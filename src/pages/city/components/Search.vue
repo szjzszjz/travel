@@ -4,7 +4,10 @@
 <!--    v-show="search" 如果在搜索就显示搜索内容-->
     <div class="search-content" ref="search" v-show="search">
       <div>
-        <div class="search-item border-bottom" v-for="(city,index) of getList" :key="index">
+        <div class="search-item border-bottom"
+             v-for="(city,index) of getList"
+             :key="index"
+             @click="handleChangeCity(city.name)">
           {{city.name}}
         </div>
 <!--        v-show="!getList.length" 如果数组长度为零 则显示没有匹配的数据-->
@@ -28,6 +31,14 @@ export default {
       list: [],
       search: '',
       timer: null
+    }
+  },
+  methods: {
+    handleChangeCity (city) {
+      // this.$store.dispatch('changeCity', city) // 调用action 然后再调用mutation
+      this.$store.commit('changeCity', city) // 直接调用mutation
+      // this.search = ''
+      this.$router.push('/')
     }
   },
   // 钩子函数 页面渲染完毕之后调用该函数
