@@ -27,6 +27,7 @@ export default {
     height:1.7rem
     width:90%
     color: $darkTextColor
+    text-align center
   }
 
 </style>
