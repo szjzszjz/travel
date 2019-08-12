@@ -52,6 +52,7 @@ export default {
       this.scroll.scrollToElement(ele)
     }
   }
+
 }
 </script>
 
@@ -83,13 +84,13 @@ export default {
     overflow: hidden
     padding: .5rem
     margin:0 1rem 0 0
-    background: skyblue
+    /*background: skyblue*/
 
   }
   .button{
     float: left
     width: 29.3%
-    background: yellowgreen
+    /*background: yellowgreen*/
     text-align center
     padding:.3rem 0
     margin: .3rem
