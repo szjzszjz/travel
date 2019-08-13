@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <common-gallery :imgs = imgs v-show="showGallery" @hiddenGallery="hiddenGallery"></common-gallery>
+    <common-gallery :imgs = imgs v-if="showGallery" @hiddenGallery="hiddenGallery"></common-gallery>
   </div>
 </template>
 
