@@ -40,14 +40,14 @@ npm run build --report
 ```
 npm install vue-awesome-swiper@2.6.7 --save
 ```  
-应用:[项目中轮播图组件](https://github.com/szjzszjz/travel/blob/index-swiper/src/pages/home/components/Swiper.vue)  
-
-### 2、[better-scroll(Vue滚动页插件)](https://github.com/ustbhuangyi/better-scroll)  
+应用1: [项目中轮播图组件](https://github.com/szjzszjz/travel/blob/index-swiper/src/pages/home/components/Swiper.vue)  
+应用2： [图片浏览组件](https://github.com/szjzszjz/travel/blob/master/src/common/gallery/Gallery.vue)  
+### 2、[better-scroll(Vue上下滚动视图插件)](https://github.com/ustbhuangyi/better-scroll)  
 安装  
 ```text
 npm install better-scroll --save
 ```  
-应用:[项目中滚动页组件](https://github.com/szjzszjz/travel/blob/master/src/pages/city/components/List.vue)  
+应用:[项目中滚动视图组件](https://github.com/szjzszjz/travel/blob/master/src/pages/city/components/List.vue)  
 
 ### 3、[vuex](https://vuex.vuejs.org/zh/)
 * 目的：Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式  
