@@ -40,8 +40,9 @@ npm run build --report
 ```
 npm install vue-awesome-swiper@2.6.7 --save
 ```  
-应用1: [项目中轮播图组件](https://github.com/szjzszjz/travel/blob/index-swiper/src/pages/home/components/Swiper.vue)  
-应用2： [图片浏览组件](https://github.com/szjzszjz/travel/blob/master/src/common/gallery/Gallery.vue)  
+应用1：[项目中轮播图组件](https://github.com/szjzszjz/travel/blob/index-swiper/src/pages/home/components/Swiper.vue)  
+应用2：[图片浏览组件](https://github.com/szjzszjz/travel/blob/master/src/common/gallery/Gallery.vue)  
+
 ### 2、[better-scroll(Vue上下滚动视图插件)](https://github.com/ustbhuangyi/better-scroll)  
 安装  
 ```text

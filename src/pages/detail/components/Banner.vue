@@ -42,12 +42,18 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  #banner{
+    position: relative
+  }
   .banner-img{
+    display: block  //解决：CSS图片下方带有4px间隙
     width:100%
   }
   .banner-info{
-    position: relative
-    bottom: 2.25rem
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
     height: 2rem
     color: #ffffff
     /*从上到下的渐变色*/
