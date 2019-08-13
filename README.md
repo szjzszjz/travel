@@ -90,7 +90,7 @@ npm run start
 ```  
 
 ## 知识点  
-* ### 1、配置别名  
+### 1、配置别名  
 在`webpack.base.conf.js`文件中配置自定义别名
 ```
 resolve: {
@@ -111,7 +111,7 @@ resolve: {
 @import "~styles/varibles.styl"
 import 'styles/iconfont.css' // 在webpack.base.conf.js 中添加style别名
 ```  
-* ### 2、设置全局变量  
+### 2、设置全局变量  
 创建全局文件：src/assets/styles/`varibles.styl`  
 ```
 添加全局变量
@@ -144,4 +144,5 @@ background: $bgColor;
       <router-view/>
     </keep-alive>
 ```
+详情页面动态路由及banner布局
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
