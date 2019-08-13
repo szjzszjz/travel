@@ -4,7 +4,7 @@
       <div class="area">
         <div class="title border-bottom">当前城市</div>
         <div class="button-list-area">
-          <div class="button">{{this.$store.state.city}}</div>
+          <div class="button">{{this.currentCity}}</div>
         </div>
       </div>
       <div class="area">
@@ -32,8 +32,16 @@
 
 <script>
 import BetterScroll from 'better-scroll'
+// eslint-disable-next-line standard/object-curly-even-spacing
+import { mapState, mapMutations} from 'vuex'
+
 export default {
   name: 'List',
+  computed: {
+    ...mapState({
+      currentCity: 'city' // 将state里面的属性映射给自定义的属性名currentCity
+    })
+  },
   // 接收父组件传过来的数据
   props: {
     hot: Array,
@@ -42,10 +50,12 @@ export default {
   },
   methods: {
     handleChangeCity (city) {
-      // this.$store.dispatch('changeCity', city) // 调用action 然后再调用mutation
-      this.$store.commit('changeCity', city) // 直接调用mutation
+      // this.$store.dispatch('changeCity', city) // 第一种方法：调用action 然后再调用mutation
+      // this.$store.commit('changeCity', city) // 第二种方法：直接调用mutation
+      this.changeCity(city)
       this.$router.push('/')
-    }
+    },
+    ...mapMutations(['changeCity']) // 第三种方法：利用扩展运算符
   },
   mounted () {
     this.scroll = new BetterScroll(this.$refs.wrapper)

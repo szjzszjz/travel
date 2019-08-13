@@ -55,6 +55,7 @@ npm install better-scroll --save
 ```text
 npm install vuex --save
 ```
+应用：[项目中对vuex的具体使用](https://github.com/szjzszjz/travel/tree/master/src/store)
 
 ## 包安装   
 ### 1、fastClick 

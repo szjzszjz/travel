@@ -9,21 +9,20 @@
     </div>
     <router-link to='/city'>
       <div class="header-right">
-        <div>
-          <span>{{this.$store.state.city}}</span>
-          <span class="iconfont">&#xe6aa;</span>
-        </div>
+        {{this.city}}
+        <span class="iconfont">&#xe6aa;</span>
       </div>
     </router-link>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  name: 'HomeHeader'
-  // props: {
-  //   city: String
-  // }
+  name: 'HomeHeader',
+  computed: {
+    ...mapState(['city']) // ...展开运算符 映射state里面的属性 直接获取值
+  }
 }
 </script>
 
