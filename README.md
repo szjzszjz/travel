@@ -125,7 +125,7 @@ background: $bgColor;
 ### 3、请求转发  
 找到配置文件：config/index.js  
 配置如下内容  
-```javascript
+```vuejs
     proxyTable: {
       '/api':{
         target: 'http://localhost:8081',
@@ -134,5 +134,14 @@ background: $bgColor;
         }
       }
     }
+```
+
+### 4、keep-alive 标签
+应用
+```vuejs
+<!--    <keep-alive> 通过路由加载页面之后 通过该标签可将内容暂时缓存到内存中 避免下次重新请求数据-->
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
 ```
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

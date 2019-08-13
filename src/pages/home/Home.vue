@@ -20,17 +20,21 @@ import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
 import axios from 'axios'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
   data: function () {
     return {
-      city: '上号',
+      lastCity: '',
       swiperList: [],
       iconList: [],
       recommendList: [],
       weekendList: []
     }
+  },
+  computed: {
+    ...mapState(['city'])
   },
   components: {
     HomeHeader,
@@ -41,7 +45,7 @@ export default {
   },
   methods: {
     getHomeInfo: function () {
-      axios.get('/api/index.json').then(this.getHomeInfoSuccess)
+      axios.get('/api/index.json?city=' + this.city).then(this.getHomeInfoSuccess)
     },
     getHomeInfoSuccess: function (res) {
       res = res.data
@@ -57,7 +61,17 @@ export default {
   // 页面渲染之后
   mounted: function () {
     console.log('页面渲染之后 mounted')
+    this.lastCity = this.city
     this.getHomeInfo()
+  },
+  // 当页面被重新显示的时候会被执行
+  activated () {
+    // 避免<keep-alive>内存缓存带来的影响 通过判断城市是否相同，来决定是否发送ajax请求
+    if (this.lastCity !== this.city) {
+      this.lastCity = this.city
+      this.getHomeInfo()
+    }
+    console.log('activated')
   }
 }
 </script>
