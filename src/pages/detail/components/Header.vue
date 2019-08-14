@@ -7,7 +7,8 @@
     <div class="header-fixed" v-show="!showAbs" :style="opacityStyle">
       <router-link to="/">
         <div class="iconfont header-fixed-back">&#xeb99;</div>
-      </router-link>景点详情
+      </router-link>
+      景点详情
     </div>
   </div>
 </template>
@@ -19,28 +20,33 @@ export default {
     return {
       showAbs: false,
       opacityStyle: {
-        opacity: 1
+        opacity: 0
       }
     }
   },
   methods: {
     handelScroll () {
-      console.log('croll')
       const offset = document.documentElement.scrollTop
-      if (offset > 64) {
+      if (offset > 64 && offset < 132) {
         console.log('>>>64')
         this.showAbs = false
         const opacity = (offset - 64) / 64
+        // console.log(opacity)
         if (opacity <= 1) {
-          console.log(opacity)
           this.opacityStyle = {
             opacity
           }
         }
       } else {
-        this.showAbs = true
+        if (offset <= 64) {
+          this.showAbs = true
+        }
+        if (offset > 132) {
+          this.opacityStyle = {
+            opacity: 1
+          }
+        }
       }
-      console.log(document.documentElement.scrollTop)
     }
   },
   // 渲染界面的时候执行该周期函数
