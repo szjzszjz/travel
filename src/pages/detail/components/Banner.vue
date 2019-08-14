@@ -4,7 +4,7 @@
       <img class="banner-img" :src="bannerData.bannerImg" alt="">
       <div class="banner-info">
         <div class="banner-title">
-         {{bannerData.sightName}}
+          {{bannerData.sightName}}
         </div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe692;</span>
@@ -12,12 +12,16 @@
         </div>
       </div>
     </div>
-    <common-gallery :imgs = imgs v-show="showGallery" @hiddenGallery="hiddenGallery"></common-gallery>
+    <fade>
+      <common-gallery :imgs=imgs v-show="showGallery" @hiddenGallery="hiddenGallery"></common-gallery>
+    </fade>
   </div>
 </template>
 
 <script>
 import CommonGallery from 'common/gallery/Gallery'
+import Fade from 'common/fade/Fade'
+
 export default {
   name: 'Banner',
   props: {
@@ -31,7 +35,8 @@ export default {
     }
   },
   components: {
-    CommonGallery
+    CommonGallery,
+    Fade
   },
   methods: {
     handleBannerClick () {
@@ -47,14 +52,16 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-    #banner{
+  #banner {
     position: relative
   }
-  .banner-img{
-    display: block  //解决：CSS图片下方带有4px间隙
-    width:100%
+
+  .banner-img {
+    display: block //解决：CSS图片下方带有4px间隙
+    width: 100%
   }
-  .banner-info{
+
+  .banner-info {
     position: absolute
     bottom: 0
     left: 0
@@ -62,24 +69,27 @@ export default {
     height: 2rem
     color: #ffffff
     /*从上到下的渐变色*/
-    background-image: linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0.8))
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8))
   }
-  .banner-title{
+
+  .banner-title {
     height: 2rem
     line-height: 2rem
     padding: 0 .5rem
     float: left
   }
-  .banner-number{
+
+  .banner-number {
     height: 2rem
     line-height: 2rem
     padding: 0 1rem
     margin-right .5rem
-    background-color: rgba(0,0,0,0.3)
+    background-color: rgba(0, 0, 0, 0.3)
     float: right
     border-radius: 1rem
   }
-  .banner-icon{
+
+  .banner-icon {
     padding: 0 .5rem
   }
 
