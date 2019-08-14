@@ -1,6 +1,6 @@
 <template>
   <div>
-    <detail-banner @handleHeaderEvent="handleHeaderEvent"></detail-banner>
+    <detail-banner :bannerData="bannerData" @handleHeaderEvent="handleHeaderEvent"></detail-banner>
     <detail-header :showHeader="showHeader"></detail-header>
     <detail-list :list="list" :showList="showList"></detail-list>
   </div>
@@ -10,6 +10,7 @@
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
 import DetailList from './components/List'
+import axios from 'axios'
 
 export default {
   name: 'Detail',
@@ -22,6 +23,11 @@ export default {
     return {
       showHeader: true,
       showList: true,
+      bannerData: {
+        bannerImg: '',
+        sightName: '',
+        galleryImgs: []
+      },
       list: [{
         level: 1,
         title: '标题一',
@@ -73,6 +79,25 @@ export default {
       this.showList = show
       console.log('显示标题' + this.showHeader)
     }
+  },
+  // 每次进入页面都会执行
+  activated () {
+    axios.get('/api/detail.json', {
+      params: {
+        id: this.$route.params.id
+      }
+    })
+      .then(res => {
+        res = res.data
+        if (res.data && res.ret) {
+          this.bannerData.bannerImg = res.data.bannerImg
+          this.bannerData.sightName = res.data.sightName
+          this.bannerData.galleryImgs = res.data.galleryImgs
+          console.log(res)
+        }
+      }).catch(err => {
+        console.log(err)
+      })
   }
 }
 </script>

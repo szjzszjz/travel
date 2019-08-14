@@ -22,5 +22,10 @@ export default new Router({
       component: Detail
     }
   ],
+
+  // 每次做路由切换的时候 让初始页面x,y都为0 避免页面之间相互影响
+  scrollBehavior (to, from, savedPosition) {
+    return {x: 0, y: 0}
+  },
   mode: 'history'
 })

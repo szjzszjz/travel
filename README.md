@@ -123,7 +123,7 @@ $bgColor = #00bcd4  //全局背景颜色
 @import "~styles/varibles.styl"
 background: $bgColor;
 ```  
-### 3、请求转发  
+### 3、请求转发（解决跨域问题）  
 找到配置文件：config/index.js  
 配置如下内容  
 ```vuejs
@@ -140,10 +140,21 @@ background: $bgColor;
 ### 4、keep-alive 标签
 应用
 ```vuejs
-<!--    <keep-alive> 通过路由加载页面之后 通过该标签可将内容暂时缓存到内存中 避免下次重新请求数据-->
+<!--    <keep-alive> 通过路由加载页面之后 通过该标签可将内容暂时缓存到内存中 避免下次重新请求数据
+exclude='组件名'： 不对该组件进行缓存-->
     <keep-alive>
       <router-view/>
     </keep-alive>
 ```
-详情页面动态路由及banner布局
+
+### 5、scrollBehavior
+应用（在路由中添加）
+```vuejs
+// 每次做路由切换的时候 让初始页面x,y都为0 避免页面之间相互影响
+  scrollBehavior (to, from, savedPosition) {
+    return {x: 0, y: 0}
+  }
+```
+  
+  
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
