@@ -155,6 +155,9 @@ exclude='组件名'： 不对该组件进行缓存-->
     return {x: 0, y: 0}
   }
 ```
-  
+### 6、--host 0.0.0.0 运行通过ip地址访问  
+```vuejs
+ "dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js"
+```  
   
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
