@@ -25,4 +25,12 @@ new Vue({
   template: '<App/>' // 渲染局部组件
 })
 
+// 自定义全局指令 不传参
+// 自由背景色
+Vue.directive('rainbow', {
+  bind (element, binding, vNode) {
+    element.style.backgroundColor = '#' + Math.random().toString(16).slice(2, 8)
+  }
+})
+
 // 路由就是根据网址的不同 返回不同的内容给用户

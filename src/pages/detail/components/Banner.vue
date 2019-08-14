@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <common-gallery :imgs = imgs v-if="showGallery" @hiddenGallery="hiddenGallery"></common-gallery>
+    <common-gallery :imgs = imgs v-show="showGallery" @hiddenGallery="hiddenGallery"></common-gallery>
   </div>
 </template>
 
@@ -33,16 +33,18 @@ export default {
   methods: {
     handleBannerClick () {
       this.showGallery = true
+      this.$emit('handleHeaderEvent', false)
     },
     hiddenGallery () {
       this.showGallery = false
+      this.$emit('handleHeaderEvent', true)
     }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-  #banner{
+    #banner{
     position: relative
   }
   .banner-img{

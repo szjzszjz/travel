@@ -1,5 +1,5 @@
 <template>
-  <div id="header">
+  <div id="header" v-show="showHeader">
     <router-link tag="div" to="/" class="header-abs" v-show="showAbs">
       <span class="iconfont">&#xeb99;</span>
     </router-link>
@@ -16,9 +16,12 @@
 <script>
 export default {
   name: 'Header',
+  props: {
+    showHeader: Boolean
+  },
   data () {
     return {
-      showAbs: false,
+      showAbs: true,
       opacityStyle: {
         opacity: 0
       }
@@ -85,6 +88,7 @@ export default {
 }
 
 .header-fixed {
+  z-index: 2 //增加组件的优先级 使其不被其他组件遮挡
   position: fixed;
   top: 0;
   left: 0;
