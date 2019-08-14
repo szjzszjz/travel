@@ -3,10 +3,11 @@
     <ul class="list" >
       <li class="item"
           @click="clickLetter"
-          @touchstart="handleTouchStart"
+          @touchstart.prevent="handleTouchStart"
           @touchmove="handleTouchMove"
           @touchend="handleTouchEnd"
           v-for="item of letters"
+          v-rainbow
           :key="item"
           :ref="item"
       >{{item}}</li>
@@ -60,13 +61,14 @@ export default {
         }
 
         this.timer = setTimeout(() => {
-          const touchY = e.touches[0].clientY - 96
-          const index = Math.floor((touchY - this.startY) / 20)
+          const touchY = e.touches[0].clientY - 96 - this.startY
+          const index = Math.floor(touchY / 24)
+          console.log(touchY, index)
           if (index >= 0 && index < this.letters.length) {
             // console.log(this.startY, touchY, index)
             this.$emit('changeLetter', this.letters[index])
           }
-        }, 10) // 设置10毫秒的间隔 通过限流提高性能 二
+        }, 5) // 设置10毫秒的间隔 通过限流提高性能 二
       }
     },
     // 离屏
@@ -85,7 +87,7 @@ export default {
     top: 6rem;
     right: 0;
     bottom: 0;
-    width: 1.2rem;
+    width: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,9 +95,10 @@ export default {
 
   .item{
     line-height: 1.5rem;
-    height: 20px;
+    height: 1.5rem;
+    width:2rem
     text-align: center;
-    font-size: 10px;
+    font-size: 1.1rem;
     color: $bgColor;
   }
 </style>

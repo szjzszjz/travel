@@ -159,5 +159,14 @@ exclude='组件名'： 不对该组件进行缓存-->
 ```vuejs
  "dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js"
 ```  
+### 7、解决真机测试白屏问题  
+安装  
+```text
+npm install babel-polyfill --save
+```
+在main.js中引入  
+```text
+import 'babel-polyfill'
+```
   
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

@@ -119,9 +119,10 @@ export default {
     margin:0 1rem 0 0
   }
   .item{
-    /*background: burlywood*/
+    background: burlywood
     padding:.3rem .5rem
-    line-height 1.8rem
+    line-height 2.3rem
+    height: 2.3rem
   }
 
 </style>
